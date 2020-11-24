@@ -1,0 +1,72 @@
+﻿@model SubjectWriterCSV.ViewModel.Subjects.IndexViewModel
+@{
+    ViewData["Title"] = "Materias";
+
+    var alertType = Model.Subjects.Success ? "alert-success" : "alert-danger";
+}
+
+
+
+
+@if (Model.Subjects.Messages.Length > 0)
+{
+    <div class="row">
+        <div class=$"alert {alertType}">
+            @Model.Subjects.Messages
+        </div>
+    </div>
+}
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+        <div class="col-2">
+            <h2>Materias</h2>
+        </div>
+        <div class="col-6"></div>
+        <div class="col-4">
+            <div class="row">
+                <div class="col-6"><a asp-action="Add" asp-controller="Subjects" class="btn btn-outline-primary">Nueva materia</a></div>
+                <div class="col-6">
+                    <form asp-action="Export" method="get">
+                        <button class="btn btn-outline-warning">Exportar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="card-body">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Materia</th>
+                        <th>Creditos</th>
+                        <th>Aula</th>
+                        <th>Horario</th>
+                        <th>Cuatrimestre</th>
+                        <th>Nota minima para aprobar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Subjects.Data)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.Credits</td>
+                            <td>@item.SchoolRoom</td>
+                            <td>@item.Schedule</td>
+                            <td>@item.Quater</td>
+                            <td>@item.MinLiteralForApprove</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+</div>

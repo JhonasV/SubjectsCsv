@@ -1,0 +1,78 @@
+﻿@model SubjectWriterCSV.ViewModel.Subjects.AddViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-12">
+        <form asp-action="Add" method="post" class="card" asp-controller="Subjects">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-7">
+                        <h2>Crear materias</h2>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-4">
+                        <div class="row">
+                            <a asp-action="Index" asp-controller="Subjects" class="btn btn-outline-primary">Volver al listado de materias</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+
+                    <div class="col">
+                        <label>Creditos</label>
+                        <input type="number" placeholder="ingresa los creditos ejmp: 3" class="form-control" asp-for="Subject.Credits" value="" />
+                        <span asp-validation-for="Subject.Credits" class="text-danger"></span>
+                    </div>
+
+                    <div class="col">
+                        <label>Materia</label>
+                        <input placeholder="Ingrese el nombre de la materia" type="text" class="form-control" asp-for="Subject.Name" value="" />
+                        <span asp-validation-for="Subject.Name" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col">
+                        <label>Aula</label>
+                        <input type="text" placeholder="ingresa el nombre del aula ejmp: virtual" class="form-control" asp-for="Subject.SchoolRoom" value="" />
+                        <span asp-validation-for="Subject.SchoolRoom" class="text-danger"></span>
+                    </div>
+
+                    <div class="col">
+                        <label>Horario</label>
+                        <input placeholder="Ingrese el horario ejmp: Lunes 08:00 - 10:00 | Martes 08:00 - 10:00" type="text" class="form-control" asp-for="Subject.Schedule" value="" />
+                        <span asp-validation-for="Subject.Schedule" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col">
+                        <label>Cuatrimestre</label>
+                        <input type="text" placeholder="ingresa el cuatrimestre ejmp: 4to" class="form-control" asp-for="Subject.Quater" value="" />
+                        <span asp-validation-for="Subject.Quater" class="text-danger"></span>
+                    </div>
+
+                    <div class="col">
+                        <label>Nota minima para aprobar</label>
+                        <input placeholder="Ingrese la nota minima para aprobar ejmp: C" type="text" class="form-control" asp-for="Subject.MinLiteralForApprove" value="" />
+                        <span asp-validation-for="Subject.MinLiteralForApprove" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-success">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
