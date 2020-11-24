@@ -1,5 +1,5 @@
 # SubjectsCsv
-Electron.NET proyect which create and export subjects
+Electron.NET proyect which creatse and exports subjects
 
 ![image](http://g.recordit.co/fBM3ufk2aW.gif)
 
